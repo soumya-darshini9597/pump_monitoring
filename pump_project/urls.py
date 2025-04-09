@@ -19,5 +19,6 @@ from django.urls import path
 from myapp.views import *  # make sure 'myapp' is your actual app name
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('message_api/', message_api),
 ]
