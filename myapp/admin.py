@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import *
+from .models import Quantity
 
-
-@admin.register(Message)
-class Message(admin.ModelAdmin):
-    list_display = ('date','time','message')
+@admin.register(Quantity)
+class QuantityAdmin(admin.ModelAdmin):
+    list_display = ['date', 'time', 'quantity']
