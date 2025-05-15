@@ -7,7 +7,7 @@ from myapp.models import Quantity
 # MQTT Configuration
 MQTT_BROKER = 'mqttbroker.bc-pl.com'
 MQTT_PORT = 1883  
-MQTT_TOPIC = '123/pump'
+MQTT_TOPIC = 'pump/alerts'
 MQTT_USER = 'mqttuser'
 MQTT_PASSWORD = 'Bfl@2025'
 
@@ -19,7 +19,6 @@ def on_connect(client, userdata, flags, rc):
         print(f"Subscribed to topic: {MQTT_TOPIC}")
     else:
         print(f"Failed to connect. Code: {rc}")
-
 
 
 # Callback when message is received
