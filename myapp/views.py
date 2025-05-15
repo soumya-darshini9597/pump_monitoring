@@ -3,6 +3,8 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import Quantity
 from django.utils.dateparse import parse_date
+import paho.mqtt.client as mqtt
+
 
 @csrf_exempt
 def quantity_api(request):
@@ -76,8 +78,7 @@ def filter_quantities(request):
 
         # Filter the data
         entries = Quantity.objects.filter(date__range=(parsed_from, parsed_to))
-
-        # Format the results
+        
         result = [
             {
                 'date': data.date.isoformat(),
